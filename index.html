@@ -1,0 +1,219 @@
+<!DOCTYPE html>
+<html lang="en-us">
+
+<head>
+  <meta charset="UTF-8">
+  <title>Rock Paper Scissors Part 1</title>
+
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+</head>
+
+<body>
+
+  <div id="game">
+    <div class="jumbotron">
+      <h1 class="display-4">Welcome to ROCK PAPER SCISSORS!</h1>
+      <p class="lead">You will play this amazing game! Press either R (rock), S (scissors), or P (paper).</p>
+      <hr class="my-4">
+      <p>How many times can you beat the computer?</p>
+      <!-- this is where the game stuff will be written -->
+    </div>
+
+    <div class="container">
+      <div class="row">
+        <div class="col-md-12">
+            <h2 class="display-4   text-center">
+              Score
+            </h2>
+            <table class="table">
+              <thead class="thead-dark">
+                <tr>
+                  <th scope="col">Player</th>
+                  <th scope="col">Computer</th>
+                  <th scope="col">Ties</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td id=playerScore></td>
+                  <td id=computerScore></td>
+                  <td id=tieScore></td>
+                </tr>
+              </tbody>
+            </table>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  
+
+<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+
+<script type="text/javascript">
+  var playerWins = 0;
+  var computerWins = 0;
+  var ties = 0;
+
+  var computerChoices = ["r", "p", "s", "l", "v"];
+    // Whenever a key is pressed, alert "pressed a button".
+    
+  document.onkeyup = function() {
+      console.log("pressed a button");
+
+      // get keypress and save
+
+      var userGuess = event.key;
+      console.log("this is the key: " + userGuess)
+
+      // random index for the computer
+
+      var computerIndex = Math.floor(Math.random()* computerChoices.length);
+
+      var computerGuess = computerChoices[computerIndex];
+      console.log("this is the computer guess: " + computerGuess);
+
+      // if there's a tie
+
+      if (userGuess === computerGuess){
+        ties ++;
+        console.log("tie score " + ties);
+      }
+
+      // if paper vs rock
+
+      else if (userGuess === "r" && computerGuess === "p"){
+        // computer wins
+        computerWins ++;
+        console.log("computer score " + computerWins);
+      }
+        // player wins
+      else if (userGuess === "p" && computerGuess === "r") {
+        playerWins ++;
+        console.log("player score  " + playerWins);
+      }
+
+      // if paper vs scissors
+      else if (userGuess === "p" && computerGuess === "s"){
+        // computer wins
+        computerWins ++;
+        console.log("computer score " + computerWins);
+      }
+
+      else if (userGuess === "s" && computerGuess === "p"){
+        // player wins
+        playerWins ++;
+        console.log("player score  " + playerWins);
+      }
+      // if paper vs lizard
+
+      else if (userGuess === "p" && computerGuess === "l"){
+        // computer wins
+        computerWins ++;
+        console.log("computer score " + computerWins);
+      }
+      else if (userGuess === "l" && computerGuess === "p"){
+        // computer wins
+        playerWins ++;
+        console.log("player score  " + playerWins);
+      }
+      // if paper vs spock (v)
+      else if (userGuess === "p" && computerGuess === "v"){
+        // player wins
+        playerWins ++;
+        console.log("player score  " + playerWins);
+      }
+      else if (userGuess === "v" && computerGuess === "p"){
+        // computer wins
+        computerWins ++;
+        console.log("computer score " + computerWins);
+      }
+
+      // if rock vs scissors
+
+      else if (userGuess === "r" && computerGuess === "s"){
+        // player wins
+        playerWins ++;
+        console.log("player score  " + playerWins);
+      }
+      else if (userGuess === "r" && computerGuess === "s"){
+        // computer wins
+        computerWins ++;
+        console.log("computer score " + computerWins);
+      }
+      // if rock vs lizard
+      else if (userGuess === "r" && computerGuess === "l"){
+        // player wins
+        playerWins ++;
+        console.log("player score  " + playerWins);
+      }
+      else if (userGuess === "l" && computerGuess === "r"){
+        // computer wins
+        computerWins ++;
+        console.log("computer score " + computerWins);
+      }
+
+      // rock vs spock
+
+      else if (userGuess === "r" && computerGuess === "v"){
+        // computer wins
+        computerWins ++;
+        console.log("computer score " + computerWins);
+      }
+
+      else if (userGuess === "v" && computerGuess === "r"){
+        // player wins
+        playerWins ++;
+        console.log("player score  " + playerWins);
+      }
+      // scissors vs lizard
+      else if (userGuess === "s" && computerGuess === "l"){
+        // player wins
+        playerWins ++;
+        console.log("player score  " + playerWins);
+      }
+      else if (userGuess === "l" && computerGuess === "s"){
+        // computer wins
+        computerWins ++;
+        console.log("computer score " + computerWins);
+      }
+      // scissors vs spock
+      else if (userGuess === "s" && computerGuess === "v"){
+        // computer wins
+        computerWins ++;
+        console.log("computer score " + computerWins);
+      }
+      else if (userGuess === "v" && computerGuess === "s"){
+        // player wins
+        playerWins ++;
+        console.log("player score  " + playerWins);
+      }
+      // if lizard vs spock
+      else if (userGuess === "l" && computerGuess === "v"){
+        // player wins
+        playerWins ++;
+        console.log("player score  " + playerWins);
+      }
+      else if (userGuess === "v" && computerGuess === "l"){
+        // computer wins
+        computerWins ++;
+        console.log("computer score " + computerWins);
+      }
+
+      // if user presses wrong key
+      else {
+        alert("Please press (R)ock, (P)aper, (S)scissors, (L)izard, or (V) Spock")
+      }
+    };
+
+    document.getElementById("tieScore").innerHTML = ties;
+    document.getElementById("playerScore").innerHTML = playerWins;
+    document.getElementById("computerScore").innerHTML = computerWins;
+
+</script>
+
+</body>
+
+</html>
