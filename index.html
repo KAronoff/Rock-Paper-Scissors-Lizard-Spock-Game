@@ -35,9 +35,9 @@
               </thead>
               <tbody>
                 <tr>
-                  <td id=playerScore></td>
-                  <td id=computerScore></td>
-                  <td id=tieScore></td>
+                  <td id="playerScore"></td>
+                  <td id="computerScore"></td>
+                  <td id="tieScore"></td>
                 </tr>
               </tbody>
             </table>
@@ -206,11 +206,34 @@
       else {
         alert("Please press (R)ock, (P)aper, (S)scissors, (L)izard, or (V) Spock")
       }
-    };
+
+      if (playerWins === 10){
+      alert("YOU ARE THE SUPREME CHAMPION!");
+      ties = 0;
+      computerWins = 0;
+      playerWins = 0;
+    }
+
+    else if (computerWins === 10){
+      alert("This could have gone better for you");
+      ties = 0;
+      computerWins = 0;
+      playerWins = 0;
+    }
+
+    else if (ties === 10){
+      alert("We're not getting anywhere. Try again.");
+      ties = 0;
+      computerWins = 0;
+      playerWins = 0;
+    }
 
     document.getElementById("tieScore").innerHTML = ties;
     document.getElementById("playerScore").innerHTML = playerWins;
     document.getElementById("computerScore").innerHTML = computerWins;
+    };
+
+    
 
 </script>
 
