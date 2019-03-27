@@ -9,11 +9,27 @@
 </head>
 
 <body>
+<style>
+  body {
+    color: #772F1A;
+  }
+  .table .thead-dark th {
+  color: #EEC170;
+  background-color: #585123;
+  border-color: #454d55;
+  }
+  .jumbotron {
+    padding: 2rem 1rem;
+    margin-bottom: 2rem;
+    background-color: #F2A65A;
+    border-radius: .3rem;
+  }
+</style>
 
   <div id="game">
     <div class="jumbotron">
       <h1 class="display-4">Welcome to ROCK, PAPER, SCISSORS, LIZARD, SPOCK!</h1>
-      <p class="lead">To play, press either (R)ock, (S)cissors), (P)aper, (L)izard, (V)ulcan Spock.</p>
+      <p class="lead">To play, press either (R)ock, (P)aper, (S)cissors), (L)izard, (V)ulcan Spock.</p>
       <hr class="my-4">
       <p>How many times can you beat the computer?</p>
       <!-- this is where the game stuff will be written -->
@@ -138,7 +154,7 @@
         playerWins ++;
         console.log("player score  " + playerWins);
       }
-      else if (userGuess === "r" && computerGuess === "s"){
+      else if (userGuess === "s" && computerGuess === "r"){
         // computer wins
         computerWins ++;
         console.log("computer score " + computerWins);
