@@ -76,6 +76,10 @@
   var computerChoices = ["r", "p", "s", "l", "v"];
     // Whenever a key is pressed, alert "pressed a button".
     
+    document.getElementById("tieScore").innerHTML = ties;
+    document.getElementById("playerScore").innerHTML = playerWins;
+    document.getElementById("computerScore").innerHTML = computerWins;
+    
   document.onkeyup = function() {
       console.log("pressed a button");
 
